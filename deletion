@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define SIZE 10
+
+int main()
+{
+    int arr[SIZE] = { 1,11,21,31,41,51,61,0,0,0 };
+    int i, pos;
+
+    printf("Values in array:\n");
+    for (i = 0; i < SIZE && arr[i] != 0; i++)
+        printf("%d ", arr[i]);
+    printf("\n\nEnter position to delete: ");
+    scanf_s("%d", &pos);
+    for (i = pos - 1; i < SIZE - 1; i++)
+    {
+        arr[i] = arr[i + 1];
+    }
+    arr[SIZE - 1] = 0;
+
+    printf("\nAfter deletion:\n");
+
+    for (i = 0; i < SIZE && arr[i] != 0; i++)
+        printf("%d ", arr[i]);
+
+    return 0;
+}
